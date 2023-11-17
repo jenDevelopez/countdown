@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect,Suspense } from "react";
 import { useTimeStore } from "./context/TimeStore";
+import Spinner from "./Spinner";
 
 function App() {
   const timeLeft = useTimeStore((state) => state.timeLeft);
@@ -32,7 +33,7 @@ function App() {
       py-4 px-2 ">
       <h1 className="text-3xl font-semibold text-white mt-8 lg:mt-0">VIAJE INMINENTE</h1>
       {timeLeft > 0 ? (
-        <>
+        <Suspense fallback={<Spinner />}>
           <h2 className="text-2xl text-white">LLEGAMOS EN</h2>
           <div 
             className="
@@ -57,7 +58,7 @@ function App() {
             </div>
           <img className="w-24 absolute left-0 top-1 animate-slide" src="/image.png" alt="tren" />
           </div>
-        </>
+        </Suspense>
       ) : (
         <div className="w-full h-[80%] border bg-slate-700 flex flex-col items-center justify-around mt-4 py-4 gap-4">
 
