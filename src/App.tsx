@@ -12,9 +12,11 @@ function App() {
   const minuts = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+  const year = new Date().getFullYear()
+  const newYear = timeLeft > 0 ? year : year + 1
   useEffect(() => {
     const timeLeftDate: number = new Date(
-      "Jan 1 2024, 0:00:00"
+      `Jan 1 ${newYear}, 0:00:00`
     ).getTime();
     
     const intervalid = setInterval(() => {
