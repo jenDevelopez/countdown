@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const timeLeftDate: number = new Date(
-      "Dec 5,2023 18:00:00"
+      "Jan 1 2024, 0:00:00"
     ).getTime();
     
     const intervalid = setInterval(() => {
@@ -31,11 +31,11 @@ function App() {
       flex flex-col justify-start items-center gap-4 md:justify-center md:gap-10
       bg-gray-900 
       py-4 px-2 ">
-      <h1 className="text-3xl font-semibold text-white mt-8 lg:mt-0">VIAJE INMINENTE</h1>
+      <h1 className="text-3xl font-semibold text-white mt-8 lg:mt-0">TIEMPO HASTA AÑO EL 2024</h1>
       {timeLeft > 0 ? (
         <Suspense fallback={<Spinner />}>
-          <h2 className="text-2xl text-white">LLEGAMOS EN</h2>
-          <div 
+          <h2 className="text-2xl text-white">QUEDAN</h2>
+          <div
             className="
             w-full h-[80%] md:w-[90%] md:h-[40%] lg:w-[50%] lg:h-[50%]
             bg-gradient-to-r from-orange-800 to-yellow-800 flex flex-col items-center justify-around md:flex-row
@@ -62,7 +62,7 @@ function App() {
       ) : (
         <div className="w-full h-[80%] border bg-slate-700 flex flex-col items-center justify-around mt-4 py-4 gap-4">
 
-          <p className="text-4xl text-white ">¡HEMOS LLEGADO!</p>
+          <p className="text-4xl text-white ">¡FELIZ AÑO NUEVO 2024!</p>
         </div>
       )}
     </main>
